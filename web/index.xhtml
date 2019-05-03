@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Calculadora</title>
+    </h:head>
+    <h:body>
+        <p:panel id="pnlCalculadora" header="Calculadora" style="text-align: center">
+            <h:form id="frmCalculadora">
+                <h:panelGrid columns="3" id="tblDatoRegistro">
+                    <p:outputLabel for="txtDato" value="Ingrese valor de Multiplicación:"/>
+                    <p:inputText id="txtDato"/>
+                    <p:commandButton id="btnTablaMultiplicar" value="Obtener Tabla de Multiplicación" actionListener="#" style="margin-left: 25px"/>
+                </h:panelGrid>
+            </h:form>
+            <p:dataTable id="tblMultiplicacion" value="#" var="listado" style="margin-top: 20px">
+                <p:column headerText="operador1">
+                    <p:outputLabel value=" "/>
+                </p:column>
+                <p:column headerText="operador2">
+                    <p:outputLabel value=" "/>
+                </p:column>
+                <p:column headerText="Resultado">
+                    <p:outputLabel value=" "/>
+                </p:column>
+            </p:dataTable>
+        </p:panel>
+    </h:body>
+</html>
+
