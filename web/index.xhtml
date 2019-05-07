@@ -11,19 +11,19 @@
             <h:form id="frmCalculadora">
                 <h:panelGrid columns="3" id="tblDatoRegistro">
                     <p:outputLabel for="txtDato" value="Ingrese valor de Multiplicación:"/>
-                    <p:inputText id="txtDato"/>
-                    <p:commandButton id="btnTablaMultiplicar" value="Obtener Tabla de Multiplicación" actionListener="#" style="margin-left: 25px"/>
+                    <p:inputText id="txtDato" value="#{tablaMultiplicacionFormBean.operador2}"/>
+                    <p:commandButton id="btnTablaMultiplicar" value="Obtener Tabla de Multiplicación" actionListener="#{tablaMultiplicacionFormBean.cargarTabla()}" update="tblMultiplicacion" style="margin-left: 25px"/>
                 </h:panelGrid>
             </h:form>
-            <p:dataTable id="tblMultiplicacion" value="#" var="listado" style="margin-top: 20px">
+            <p:dataTable id="tblMultiplicacion" value="#{tablaMultiplicacionFormBean.tablaProducto()}" var="listado" style="margin-top: 20px; width: 500px; margin: 50px 200px" emptyMessage="Tabla Vacia">
                 <p:column headerText="operador1">
-                    <p:outputLabel value=" "/>
+                    <p:outputLabel value="#{listado.coeficiente1}"/>
                 </p:column>
                 <p:column headerText="operador2">
-                    <p:outputLabel value=" "/>
+                    <p:outputLabel value="#{listado.coeficiente2} "/>
                 </p:column>
                 <p:column headerText="Resultado">
-                    <p:outputLabel value=" "/>
+                    <p:outputLabel value="#{listado.resultado}"/>
                 </p:column>
             </p:dataTable>
         </p:panel>
